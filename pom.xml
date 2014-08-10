@@ -68,6 +68,7 @@
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
+
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
@@ -75,6 +76,7 @@
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
+
     <dependency>
       <groupId>org.jboss.logging</groupId>
       <artifactId>jboss-logging-spi</artifactId>
@@ -82,6 +84,7 @@
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
+
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
@@ -115,18 +118,21 @@
       <version>4.10</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
       <version>3.1</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymockclassextension</artifactId>
       <version>3.1</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
@@ -154,6 +160,7 @@
           <showDeprecation>true</showDeprecation>
           <source>1.8</source>
           <target>1.8</target>
+          <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
 
