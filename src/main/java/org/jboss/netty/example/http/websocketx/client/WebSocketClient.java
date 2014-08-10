@@ -77,6 +77,7 @@ public class WebSocketClient {
                             uri, WebSocketVersion.V13, null, false, customHeaders);
 
             bootstrap.setPipelineFactory(new ChannelPipelineFactory() {
+                @Override
                 public ChannelPipeline getPipeline() throws Exception {
                     ChannelPipeline pipeline = Channels.pipeline();
 
