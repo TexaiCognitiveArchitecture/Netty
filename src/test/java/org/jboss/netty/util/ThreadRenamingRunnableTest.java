@@ -35,7 +35,7 @@ public class ThreadRenamingRunnableTest {
                 null); // thread name
         } catch (Throwable throwable) {
           if (!(throwable instanceof NullPointerException)) {
-            System.out.println(throwable.getStackTrace().toString());
+            throwable.getStackTrace().toString();
           }
           return;
         }
@@ -49,7 +49,7 @@ public class ThreadRenamingRunnableTest {
         new ThreadRenamingRunnable(null, "foo");
         } catch (Throwable throwable) {
           if (!(throwable instanceof NullPointerException)) {
-            System.out.println(throwable.getStackTrace().toString());
+            throwable.printStackTrace();
           }
           return;
         }
