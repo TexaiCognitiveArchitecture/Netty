@@ -22,15 +22,24 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class ThreadRenamingRunnableTest {
-
+  
+  
     //@Test(expected = NullPointerException.class)
     @Test
     public void shouldNotAllowNullName() throws Exception {
         final Runnable runnable = createMock(Runnable.class);
         assertNotNull(runnable);
+        try {
         new ThreadRenamingRunnable(
                 runnable, 
                 null); // thread name
+        } catch (Throwable throwable) {
+          if (!(throwable instanceof NullPointerException)) {
+            System.out.println(throwable.getStackTrace().toString());
+          }
+          return;
+        }
+        fail("should throw a NullPointerException");
     }
 
     @Test(expected = NullPointerException.class)
