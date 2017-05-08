@@ -26,7 +26,7 @@ public class ThreadRenamingRunnableTest {
   
     //@Test(expected = NullPointerException.class)
     @Test
-    public void shouldNotAllowNullName() throws Exception {
+    public void shouldNotAllowNullName() {
         final Runnable runnable = createMock(Runnable.class);
         assertNotNull(runnable);
         try {
@@ -42,9 +42,18 @@ public class ThreadRenamingRunnableTest {
         fail("should throw a NullPointerException");
     }
 
-    @Test(expected = NullPointerException.class)
-    public void shouldNotAllowNullRunnable() throws Exception {
+    //@Test(expected = NullPointerException.class)
+    @Test
+   public void shouldNotAllowNullRunnable() {
+     try {
         new ThreadRenamingRunnable(null, "foo");
+        } catch (Throwable throwable) {
+          if (!(throwable instanceof NullPointerException)) {
+            System.out.println(throwable.getStackTrace().toString());
+          }
+          return;
+        }
+        fail("should throw a NullPointerException");
     }
 
     @Test
