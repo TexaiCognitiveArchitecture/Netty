@@ -15,19 +15,21 @@
  */
 package org.jboss.netty.util;
 
-import static org.easymock.EasyMock.*;
-import static org.junit.Assert.*;
-
 import java.security.Permission;
 import java.util.concurrent.Executor;
-
+import static org.easymock.EasyMock.*;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class ThreadRenamingRunnableTest {
 
     @Test(expected = NullPointerException.class)
     public void shouldNotAllowNullName() throws Exception {
-        new ThreadRenamingRunnable(createMock(Runnable.class), null);
+        final Runnable runnable = createMock(Runnable.class);
+        assertNotNull(runnable);
+        new ThreadRenamingRunnable(
+                runnable, 
+                null); // thread name
     }
 
     @Test(expected = NullPointerException.class)
